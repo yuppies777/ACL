@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bdcc0xw23oamx"]
+
+[ext_resource type="Script" uid="uid://de108nne4ia1a" path="res://main_menu.gd" id="1_06t4h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.26666668)
+shadow_size = 6
+shadow_offset = Vector2(0, 4)
+
+[node name="main menu" type="Node2D" unique_id=956264585]
+script = ExtResource("1_06t4h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1577494464]
+offset_left = 446.0
+offset_top = 193.0
+offset_right = 729.0
+offset_bottom = 376.0
+
+[node name="Nouvelle partie" type="Button" parent="VBoxContainer" unique_id=136555132]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+text = "Nouvelle partie"
+
+[node name="Paramètres" type="Button" parent="VBoxContainer" unique_id=149668890]
+layout_mode = 2
+text = "Paramètres"
+
+[node name="Quitter" type="Button" parent="VBoxContainer" unique_id=1504914163]
+layout_mode = 2
+text = "Quitter"
+
+[connection signal="pressed" from="VBoxContainer/Nouvelle partie" to="." method="_on_nouvelle_partie_pressed"]
+[connection signal="pressed" from="VBoxContainer/Paramètres" to="." method="_on_paramètres_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quitter" to="." method="_on_quitter_pressed"]
